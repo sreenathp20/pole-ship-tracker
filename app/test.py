@@ -1,5 +1,5 @@
 from lib import datamodel
 
 dbmodel = datamodel.DbCon()
-#dbmodel.createTable()
+dbmodel.createTable()
 dbmodel.importCsv()

@@ -1,27 +1,45 @@
-# NgDoanalytics
+# POLESTAR Python assignment
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.4.
+This project was developed using Python flask framework
 
-## Development server
+## Installation
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Activate python virtual environment from pole (base) directory using the command
 
-## Code scaffolding
+command: source bin/activate
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Python libraries
 
-## Build
+All python libraries are available at
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+pole/lib/python3.7/site-packages 
 
-## Running unit tests
+## Import csv data and python test execution
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Navigate to app folder
+command: cd app
+and run pytest to execute csv import and test case execution
+command: pytest
 
-## Running end-to-end tests
+## Running flask api and html page
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+run below commands from app folder
 
-## Further help
+set environment variable flask_app
+command: FLASK_APP=app.py
+run flask application
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+command: flask run
+
+UI can be viewed after running the application 
+
+http://localhost:5000/
+
+ships api
+
+http://localhost:5000/api/ships/
+
+
+get positions api
+
+http://localhost:5000/api/positions/9247455/

@@ -1,10 +1,24 @@
-from flask import Flask
+from flask import Flask, render_template
+import json
 app = Flask(__name__)
 from lib import datamodel
 
-dbmodel = datamodel.DbCon()
-dbmodel.createTable()
+#dbmodel.createTable()
 
 @app.route("/")
-def hello():
-    return "Hello World!"
+def home():
+    return render_template("index.html")
+
+@app.route("/api/ships/")
+def ships():
+    print("hi")
+    dbmodel = datamodel.DbCon()
+    ships = dbmodel.getShips()
+    return json.dumps(ships)
+
+@app.route("/api/positions/<imo>/")
+def positions(imo):
+    print("imo ", imo)
+    dbmodel = datamodel.DbCon()
+    positions = dbmodel.getPositions(imo)
+    return json.dumps(positions)
